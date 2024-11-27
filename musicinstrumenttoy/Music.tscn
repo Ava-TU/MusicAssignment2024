@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu80nntsddon6"]
+
+[ext_resource type="Texture2D" uid="uid://dv0irk4bly4nk" path="res://icon.svg" id="1_qchyi"]
+[ext_resource type="Script" path="res://ButtonAudio.gd" id="2_ymoms"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pwrs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwlir"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(595, 320)
+texture = ExtResource("1_qchyi")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = 62.0
+offset_top = -62.0
+offset_right = 70.0
+offset_bottom = -54.0
+scale = Vector2(-15.3078, 15.3361)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1pwrs")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qwlir")
+script = ExtResource("2_ymoms")
+
+[node name="Button" type="AudioStreamPlayer2D" parent="Sprite2D/Button"]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="Sprite2D/Button" to="Sprite2D/Button" method="_on_pressed"]
