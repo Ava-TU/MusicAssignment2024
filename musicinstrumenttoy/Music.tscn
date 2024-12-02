@@ -65,6 +65,6 @@ unique_name_in_owner = true
 stream = ExtResource("3_43hv5")
 
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
-[connection signal="value_changed" from="Pitch1" to="Sprite2D/Button" method="_on_h_slider_value_changed"]
-[connection signal="value_changed" from="Volume" to="Sprite2D/Button" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Pitch1" to="." method="_on_pitch_1_value_changed"]
+[connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
 [connection signal="button_down" from="Play/Play" to="." method="_on_play_button_down"]

@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
-	
+	%Button.play()
 	pass # Replace with function body.
 
 
@@ -25,4 +25,14 @@ func _on_play_button_down() -> void:
 	else:
 		%Play.text = "Stop"
 		%AudioPlay.play()
+	pass # Replace with function body.
+
+
+func _on_pitch_1_value_changed(value: float) -> void:
+	%Button.pitch_scale = value
+	pass # Replace with function body.
+
+
+func _on_volume_value_changed(value: float) -> void:
+	%Button.volume_db = value
 	pass # Replace with function body.
