@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu80nntsddon6"]
+[gd_scene load_steps=6 format=3 uid="uid://cu80nntsddon6"]
 
 [ext_resource type="Texture2D" uid="uid://dv0irk4bly4nk" path="res://icon.svg" id="1_qchyi"]
 [ext_resource type="Script" path="res://ButtonAudio.gd" id="2_ymoms"]
+[ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://AudioTest.ogg" id="3_43hv5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pwrs"]
 
@@ -11,7 +12,7 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(595, 320)
+position = Vector2(158, 500)
 texture = ExtResource("1_qchyi")
 
 [node name="Button" type="Button" parent="Sprite2D"]
@@ -26,5 +27,22 @@ script = ExtResource("2_ymoms")
 
 [node name="Button" type="AudioStreamPlayer2D" parent="Sprite2D/Button"]
 unique_name_in_owner = true
+stream = ExtResource("3_43hv5")
+
+[node name="Pitch1" type="HSlider" parent="."]
+offset_left = 63.0
+offset_top = 579.0
+offset_right = 251.0
+offset_bottom = 595.0
+max_value = 4.0
+step = 0.01
+
+[node name="Volume" type="HSlider" parent="."]
+offset_left = 20.0
+offset_top = 389.0
+offset_right = 338.0
+offset_bottom = 405.0
 
 [connection signal="pressed" from="Sprite2D/Button" to="Sprite2D/Button" method="_on_pressed"]
+[connection signal="value_changed" from="Pitch1" to="Sprite2D/Button" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="Volume" to="Sprite2D/Button" method="_on_volume_value_changed"]
