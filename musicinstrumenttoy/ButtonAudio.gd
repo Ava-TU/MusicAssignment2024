@@ -1,10 +1,10 @@
 extends Node2D
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,3 +33,7 @@ func _on_pitch_1_value_changed(value: float) -> void:
 
 func _on_volume_value_changed(value: float) -> void:
 	%Button.volume_db = value
+
+
+func _on_reverb_1_value_changed(value: float) -> void:
+	%ReverbAudio.volume_db = value
