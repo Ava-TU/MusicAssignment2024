@@ -36,4 +36,5 @@ func _on_volume_value_changed(value: float) -> void:
 
 
 func _on_reverb_1_value_changed(value: float) -> void:
-	%ReverbAudio.volume_db = value
+	var f:AudioEffectReverb = AudioServer.get_bus_effect(0, 0)
+	f.room_size = value
