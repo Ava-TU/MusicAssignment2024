@@ -1,4 +1,4 @@
-extends Button
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,19 +11,18 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_pressed() -> void:
-	%Button.play()
-	print("1")
-	%Sprite2D.texture = load("res://wallpaper1.jpg") # changes sprite by loading in another image
-	await get_tree().create_timer(1.0).timeout
-	%Sprite2D.texture = load("res://icon.svg")
 
 
-func _on_h_slider_value_changed(value: float) -> void:
-	%Button.pitch_scale = value
+func _on_button_button_down() -> void:
+	
 	pass # Replace with function body.
 
 
-func _on_volume_value_changed(value: float) -> void:
-	%Button.volume_db = value
+func _on_play_button_down() -> void:
+	if %AudioPlay.playing:
+		%Play.text = "Play"
+		%AudioPlay.stop()
+	else:
+		%Play.text = "Stop"
+		%AudioPlay.play()
 	pass # Replace with function body.
