@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu80nntsddon6"]
+[gd_scene load_steps=9 format=3 uid="uid://cu80nntsddon6"]
 
 [ext_resource type="Texture2D" uid="uid://dv0irk4bly4nk" path="res://icon.svg" id="1_qchyi"]
 [ext_resource type="Script" path="res://ButtonAudio.gd" id="2_ymoms"]
 [ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://AudioTest.ogg" id="3_43hv5"]
+[ext_resource type="PackedScene" uid="uid://b0pmbkdhwwdo6" path="res://looper.tscn" id="4_3ddh6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pwrs"]
 
@@ -47,14 +48,14 @@ offset_right = 338.0
 offset_bottom = 405.0
 
 [node name="Play" type="Sprite2D" parent="."]
-position = Vector2(542, 226)
+position = Vector2(573, 305)
 
 [node name="Play" type="Button" parent="Play"]
 unique_name_in_owner = true
-offset_left = -137.0
-offset_top = -91.0
-offset_right = -129.0
-offset_bottom = -83.0
+offset_left = -16.0
+offset_top = -12.0
+offset_right = 17.0
+offset_bottom = 11.0
 theme_override_styles/hover = SubResource("StyleBoxEmpty_pxh6p")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jmk0q")
 text = "Play"
@@ -62,6 +63,9 @@ text = "Play"
 [node name="AudioPlay" type="AudioStreamPlayer2D" parent="Play/Play"]
 unique_name_in_owner = true
 stream = ExtResource("3_43hv5")
+
+[node name="Node2D" parent="." instance=ExtResource("4_3ddh6")]
+position = Vector2(769, 212)
 
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="value_changed" from="Pitch1" to="." method="_on_pitch_1_value_changed"]

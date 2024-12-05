@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0pmbkdhwwdo6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k26jf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns1af"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 289.0
+offset_top = 164.0
+offset_right = 297.0
+offset_bottom = 172.0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k26jf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ns1af")
+text = "Play"
