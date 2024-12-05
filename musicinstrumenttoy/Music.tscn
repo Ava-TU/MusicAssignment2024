@@ -65,7 +65,7 @@ unique_name_in_owner = true
 stream = ExtResource("3_43hv5")
 
 [node name="Node2D" parent="." instance=ExtResource("4_3ddh6")]
-position = Vector2(769, 212)
+position = Vector2(540, 81)
 
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="value_changed" from="Pitch1" to="." method="_on_pitch_1_value_changed"]

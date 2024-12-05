@@ -1,16 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0pmbkdhwwdo6"]
+[gd_scene load_steps=5 format=3 uid="uid://b0pmbkdhwwdo6"]
+
+[ext_resource type="Script" path="res://looper.gd" id="1_cdl0b"]
+[ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://AudioTest.ogg" id="2_i5tb7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k26jf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ns1af"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(392, 250)
+
+[node name="Looper" type="Node2D" parent="."]
+script = ExtResource("1_cdl0b")
+
+[node name="AudioTest" type="AudioStreamPlayer" parent="Looper"]
+stream = ExtResource("2_i5tb7")
+
+[node name="AudioTest2" type="AudioStreamPlayer" parent="Looper"]
+stream = ExtResource("2_i5tb7")
+
+[node name="AudioTest3" type="AudioStreamPlayer" parent="Looper"]
+stream = ExtResource("2_i5tb7")
+
+[node name="Timer" type="Timer" parent="Looper"]
+unique_name_in_owner = true
 
 [node name="Button" type="Button" parent="."]
-offset_left = 289.0
-offset_top = 164.0
-offset_right = 297.0
-offset_bottom = 172.0
+offset_left = -19.0
+offset_top = -11.0
+offset_right = 27.0
+offset_bottom = 12.0
 theme_override_styles/hover = SubResource("StyleBoxEmpty_k26jf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ns1af")
-text = "Play"
+text = "Music"
+
+[connection signal="timeout" from="Looper/Timer" to="Looper" method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="Looper" method="_on_button_pressed"]
