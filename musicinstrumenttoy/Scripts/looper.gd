@@ -8,17 +8,17 @@ var current:int
 var num_samples:int
 
 
-func _on_button_pressed() -> void:
-	%Timer.start()
-	num_samples = get_child_count() - 1
+#func _on_button_pressed() -> void:
+#	%Timer.start()
+#	num_samples = get_child_count() - 1
+#	
+#	for i in range(steps):
+#		pattern.push_back(-1)
 	
-	for i in range(steps):
-		pattern.push_back(-1)
-	
-	pattern[0] = 0
-	pattern[1] = 1
-	pattern[2] = 2
-	pattern[3] = 3
+#	pattern[0] = 0
+#	pattern[1] = 1
+#	pattern[2] = 2
+#	pattern[3] = 3
 	
 
 
@@ -54,4 +54,12 @@ func _on_button_button_down() -> void:
 		%Timer.start()
 		print("timer")
 		num_samples = get_child_count() - 1
+		
+		for i in range(steps):
+			pattern.push_back(-1)
+			
+		pattern[0] = 0
+		pattern[1] = 1
+		pattern[2] = 2
+		pattern[3] = 3
 		
