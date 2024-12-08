@@ -31,7 +31,6 @@ func _on_play_button_down() -> void:
 
 func _on_pitch_1_value_changed(value: float) -> void:
 	%Button.pitch_scale = value
-	
 
 
 func _on_volume_value_changed(value: float) -> void:
