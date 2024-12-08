@@ -40,3 +40,8 @@ func _on_volume_value_changed(value: float) -> void:
 		bus_index,
 		linear_to_db(value)
 	)
+
+
+func _on_blue_button_down() -> void:
+	%BlueDrum.play()
+	pass # Replace with function body.
