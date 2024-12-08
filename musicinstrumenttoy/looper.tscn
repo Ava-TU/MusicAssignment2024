@@ -15,12 +15,15 @@ script = ExtResource("1_cdl0b")
 
 [node name="AudioTest" type="AudioStreamPlayer" parent="Looper"]
 stream = ExtResource("2_i5tb7")
+bus = &"Music"
 
 [node name="AudioTest2" type="AudioStreamPlayer" parent="Looper"]
 stream = ExtResource("2_i5tb7")
+bus = &"Music"
 
 [node name="AudioTest3" type="AudioStreamPlayer" parent="Looper"]
 stream = ExtResource("2_i5tb7")
+bus = &"Music"
 
 [node name="Timer" type="Timer" parent="Looper"]
 unique_name_in_owner = true

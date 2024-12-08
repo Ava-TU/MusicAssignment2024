@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://m2ohm3fm6dji"]
+
+[ext_resource type="Script" path="res://volume_slider.gd" id="1_rw3gy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="volume_slider" type="HSlider" parent="."]
+offset_left = 98.0
+offset_top = 237.0
+offset_right = 404.0
+offset_bottom = 264.0
+script = ExtResource("1_rw3gy")
+
+[connection signal="value_changed" from="volume_slider" to="volume_slider" method="_on_value_changed"]

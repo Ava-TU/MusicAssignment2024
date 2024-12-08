@@ -1,6 +1,8 @@
 extends Node2D
 
+@export var bus_name: String
 
+var bus_index: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,7 +31,12 @@ func _on_play_button_down() -> void:
 
 func _on_pitch_1_value_changed(value: float) -> void:
 	%Button.pitch_scale = value
+	
 
 
 func _on_volume_value_changed(value: float) -> void:
 	%Button.volume_db = value
+	AudioServer.set_bus_volume_db(
+		bus_index,
+		linear_to_db(value)
+	)
