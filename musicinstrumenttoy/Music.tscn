@@ -21,24 +21,25 @@ script = ExtResource("2_ymoms")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -275.0
+offset_right = 119.0
+offset_bottom = -85.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("6_5ishx")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/HBoxContainer"]
 unique_name_in_owner = true
-position = Vector2(960, 811)
+position = Vector2(123, 129)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_fwaov")
 
-[node name="Button" type="Button" parent="Sprite2D"]
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer/Sprite2D"]
 offset_left = 62.0
 offset_top = -62.0
 offset_right = 70.0
@@ -47,10 +48,16 @@ scale = Vector2(-15.3078, 15.3361)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1pwrs")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qwlir")
 
-[node name="Button" type="AudioStreamPlayer2D" parent="Sprite2D/Button"]
+[node name="Button" type="AudioStreamPlayer2D" parent="CanvasLayer/HBoxContainer/Sprite2D/Button"]
 unique_name_in_owner = true
 stream = ExtResource("3_ftxv4")
 bus = &"Buttons"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_5ishx")
 
 [node name="Pitch1" type="HSlider" parent="."]
 offset_left = 73.0
@@ -89,7 +96,10 @@ stream = ExtResource("3_43hv5")
 [node name="Node2D" parent="." instance=ExtResource("4_3ddh6")]
 position = Vector2(137, 58)
 
-[connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[connection signal="button_down" from="CanvasLayer/HBoxContainer/Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="value_changed" from="Pitch1" to="." method="_on_pitch_1_value_changed"]
 [connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
 [connection signal="button_down" from="Play/Play" to="." method="_on_play_button_down"]
