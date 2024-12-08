@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu80nntsddon6"]
+[gd_scene load_steps=11 format=3 uid="uid://cu80nntsddon6"]
 
 [ext_resource type="Texture2D" uid="uid://c37dfpl7o48kk" path="res://Sprites/DrumRed.png" id="2_fwaov"]
 [ext_resource type="Script" path="res://Scripts/ButtonAudio.gd" id="2_ymoms"]
 [ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://Audio/AudioTest.ogg" id="3_43hv5"]
 [ext_resource type="AudioStream" uid="uid://8nh7n6yu6hul" path="res://Audio/AudioTestSingle.ogg" id="3_ftxv4"]
 [ext_resource type="PackedScene" uid="uid://b0pmbkdhwwdo6" path="res://looper.tscn" id="4_3ddh6"]
+[ext_resource type="Texture2D" uid="uid://dv86tsedwitou" path="res://MusicSoundboardBackground.png" id="6_5ishx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pwrs"]
 
@@ -17,9 +18,23 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("2_ymoms")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_5ishx")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(576, 511)
+position = Vector2(960, 811)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_fwaov")
 
