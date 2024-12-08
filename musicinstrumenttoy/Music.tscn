@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cu80nntsddon6"]
 
-[ext_resource type="Texture2D" uid="uid://c37dfpl7o48kk" path="res://Sprites/DrumSprites.png" id="2_fwaov"]
+[ext_resource type="Texture2D" uid="uid://c37dfpl7o48kk" path="res://Sprites/DrumRed.png" id="2_fwaov"]
 [ext_resource type="Script" path="res://Scripts/ButtonAudio.gd" id="2_ymoms"]
 [ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://Audio/AudioTest.ogg" id="3_43hv5"]
 [ext_resource type="AudioStream" uid="uid://8nh7n6yu6hul" path="res://Audio/AudioTestSingle.ogg" id="3_ftxv4"]
