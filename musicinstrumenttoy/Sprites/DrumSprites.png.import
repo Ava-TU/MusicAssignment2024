@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3qltod33fk8i"
-path="res://.godot/imported/wallpaper1.jpg-5e868afb27f4970f9d8f1a12ca8ec022.ctex"
+uid="uid://c37dfpl7o48kk"
+path="res://.godot/imported/DrumSprites.png-546792afe506411a70ecc339a3343a54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wallpaper1.jpg"
-dest_files=["res://.godot/imported/wallpaper1.jpg-5e868afb27f4970f9d8f1a12ca8ec022.ctex"]
+source_file="res://Sprites/DrumSprites.png"
+dest_files=["res://.godot/imported/DrumSprites.png-546792afe506411a70ecc339a3343a54.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0pmbkdhwwdo6"]
 
-[ext_resource type="Script" path="res://looper.gd" id="1_cdl0b"]
-[ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://AudioTest.ogg" id="2_i5tb7"]
+[ext_resource type="Script" path="res://Scripts/looper.gd" id="1_cdl0b"]
+[ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://Audio/AudioTest.ogg" id="2_i5tb7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k26jf"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://m2ohm3fm6dji"]
 
-[ext_resource type="Script" path="res://volume_slider.gd" id="1_rw3gy"]
+[ext_resource type="Script" path="res://Scripts/volume_slider.gd" id="1_rw3gy"]
 
 [node name="Node2D" type="Node2D"]
 

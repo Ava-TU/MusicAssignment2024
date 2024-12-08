@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://cu80nntsddon6"]
 
-[ext_resource type="Texture2D" uid="uid://dv0irk4bly4nk" path="res://icon.svg" id="1_qchyi"]
-[ext_resource type="Script" path="res://ButtonAudio.gd" id="2_ymoms"]
-[ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://AudioTest.ogg" id="3_43hv5"]
-[ext_resource type="AudioStream" uid="uid://8nh7n6yu6hul" path="res://AudioTestSingle.ogg" id="3_ftxv4"]
+[ext_resource type="Texture2D" uid="uid://c37dfpl7o48kk" path="res://Sprites/DrumSprites.png" id="2_fwaov"]
+[ext_resource type="Script" path="res://Scripts/ButtonAudio.gd" id="2_ymoms"]
+[ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://Audio/AudioTest.ogg" id="3_43hv5"]
+[ext_resource type="AudioStream" uid="uid://8nh7n6yu6hul" path="res://Audio/AudioTestSingle.ogg" id="3_ftxv4"]
 [ext_resource type="PackedScene" uid="uid://b0pmbkdhwwdo6" path="res://looper.tscn" id="4_3ddh6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pwrs"]
@@ -19,8 +19,9 @@ script = ExtResource("2_ymoms")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(165, 530)
-texture = ExtResource("1_qchyi")
+position = Vector2(576, 511)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_fwaov")
 
 [node name="Button" type="Button" parent="Sprite2D"]
 offset_left = 62.0
