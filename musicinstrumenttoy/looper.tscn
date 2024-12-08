@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0pmbkdhwwdo6"]
+[gd_scene load_steps=8 format=3 uid="uid://b0pmbkdhwwdo6"]
 
 [ext_resource type="Script" path="res://Scripts/looper.gd" id="1_cdl0b"]
-[ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://Audio/AudioTest.ogg" id="2_i5tb7"]
+[ext_resource type="AudioStream" uid="uid://bk64j0yiblo1a" path="res://Audio/LoopSound1.ogg" id="2_cajes"]
+[ext_resource type="AudioStream" uid="uid://dsiy5p8mjtkky" path="res://Audio/LoopSound2.ogg" id="3_n06tn"]
+[ext_resource type="AudioStream" uid="uid://uruk53ta57xh" path="res://Audio/LoopSound3.ogg" id="4_xr3ku"]
+[ext_resource type="AudioStream" uid="uid://mlfef4ts2rku" path="res://Audio/LoopSound4.ogg" id="5_68mmb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k26jf"]
 
@@ -13,22 +16,28 @@ position = Vector2(392, 250)
 [node name="Looper" type="Node2D" parent="."]
 script = ExtResource("1_cdl0b")
 
-[node name="AudioTest" type="AudioStreamPlayer" parent="Looper"]
-stream = ExtResource("2_i5tb7")
-bus = &"Music"
+[node name="LoopSound1" type="AudioStreamPlayer" parent="Looper"]
+unique_name_in_owner = true
+stream = ExtResource("2_cajes")
 
-[node name="AudioTest2" type="AudioStreamPlayer" parent="Looper"]
-stream = ExtResource("2_i5tb7")
-bus = &"Music"
+[node name="LoopSound2" type="AudioStreamPlayer" parent="Looper"]
+unique_name_in_owner = true
+stream = ExtResource("3_n06tn")
 
-[node name="AudioTest3" type="AudioStreamPlayer" parent="Looper"]
-stream = ExtResource("2_i5tb7")
-bus = &"Music"
+[node name="LoopSound3" type="AudioStreamPlayer" parent="Looper"]
+unique_name_in_owner = true
+stream = ExtResource("4_xr3ku")
+
+[node name="LoopSound4" type="AudioStreamPlayer" parent="Looper"]
+unique_name_in_owner = true
+stream = ExtResource("5_68mmb")
 
 [node name="Timer" type="Timer" parent="Looper"]
 unique_name_in_owner = true
+wait_time = 0.5
 
 [node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
 offset_left = -19.0
 offset_top = -11.0
 offset_right = 27.0
@@ -38,4 +47,5 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ns1af")
 text = "Music"
 
 [connection signal="timeout" from="Looper/Timer" to="Looper" method="_on_timer_timeout"]
+[connection signal="button_down" from="Button" to="Looper" method="_on_button_button_down"]
 [connection signal="pressed" from="Button" to="Looper" method="_on_button_pressed"]

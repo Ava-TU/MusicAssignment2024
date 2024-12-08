@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/ButtonAudio.gd" id="2_ymoms"]
 [ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://Audio/AudioTest.ogg" id="3_43hv5"]
 [ext_resource type="PackedScene" uid="uid://b0pmbkdhwwdo6" path="res://looper.tscn" id="4_3ddh6"]
-[ext_resource type="AudioStream" uid="uid://d3pl201lkiexu" path="res://DrumSound1.ogg" id="4_va8xg"]
+[ext_resource type="AudioStream" uid="uid://d3pl201lkiexu" path="res://Audio/DrumSound1.ogg" id="4_va8xg"]
 [ext_resource type="Texture2D" uid="uid://dv86tsedwitou" path="res://MusicSoundboardBackground.png" id="6_5ishx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pwrs"]
@@ -51,7 +51,6 @@ offset_top = 606.0
 offset_right = 261.0
 offset_bottom = 622.0
 max_value = 5.0
-step = 0.001
 
 [node name="Volume" type="HSlider" parent="."]
 offset_left = 71.0
