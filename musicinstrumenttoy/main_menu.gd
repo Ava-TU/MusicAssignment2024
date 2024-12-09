@@ -16,6 +16,11 @@ func _process(delta: float) -> void:
 	else:
 		%PlayHover.texture = load("")
 	pass
+	
+	if %Quit.is_hovered():
+		%QuitHover.texture = load("res://Sprites/No...Hover.png")
+	else:
+		%QuitHover.texture = load("")
 
 
 func _on_button_pressed() -> void:
@@ -24,4 +29,5 @@ func _on_button_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
+	get_tree().quit()
 	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b505w4iqr2op"]
+[gd_scene load_steps=11 format=3 uid="uid://b505w4iqr2op"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_dh1eb"]
 [ext_resource type="Texture2D" uid="uid://bypk31h3x14cx" path="res://MusicSoundboardMainMenu.png" id="1_vbfh1"]
@@ -10,6 +10,14 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_340tj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5k75"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4h1u0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uwlqs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8n0ut"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xk1a"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_dh1eb")
@@ -35,10 +43,21 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_ic1w3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_340tj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_c5k75")
 
-[node name="Quit" type="Button" parent="."]
+[node name="QuitHover" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-offset_right = 8.0
-offset_bottom = 8.0
+position = Vector2(1348, 878)
+
+[node name="Quit" type="Button" parent="QuitHover"]
+unique_name_in_owner = true
+offset_left = -274.0
+offset_top = -122.0
+offset_right = -266.0
+offset_bottom = -114.0
+scale = Vector2(69.44, 30.72)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4h1u0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uwlqs")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8n0ut")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7xk1a")
 
 [connection signal="pressed" from="PlayHover/Play" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="QuitHover/Quit" to="." method="_on_quit_pressed"]
