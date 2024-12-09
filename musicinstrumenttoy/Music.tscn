@@ -1,13 +1,23 @@
-[gd_scene load_steps=19 format=3 uid="uid://cu80nntsddon6"]
+[gd_scene load_steps=25 format=3 uid="uid://cu80nntsddon6"]
 
 [ext_resource type="Texture2D" uid="uid://c37dfpl7o48kk" path="res://Sprites/DrumRed.png" id="2_fwaov"]
 [ext_resource type="Script" path="res://Scripts/ButtonAudio.gd" id="2_ymoms"]
 [ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://Audio/AudioTest.ogg" id="3_43hv5"]
+[ext_resource type="Texture2D" uid="uid://c1ioobaes2yd3" path="res://Sprites/Cymbol1.png" id="3_genuk"]
 [ext_resource type="PackedScene" uid="uid://b0pmbkdhwwdo6" path="res://looper.tscn" id="4_3ddh6"]
+[ext_resource type="AudioStream" uid="uid://8ni8khpb8wrs" path="res://Audio/CymbolSound1.ogg" id="4_gb2km"]
 [ext_resource type="AudioStream" uid="uid://d3pl201lkiexu" path="res://Audio/DrumSound1.ogg" id="4_va8xg"]
 [ext_resource type="Texture2D" uid="uid://lt74jw60yka6" path="res://Sprites/DrumBlue.png" id="5_u1p1v"]
 [ext_resource type="Texture2D" uid="uid://dv86tsedwitou" path="res://MusicSoundboardBackground.png" id="6_5ishx"]
 [ext_resource type="AudioStream" uid="uid://cmhhki61dmnuk" path="res://Audio/DrumSound2.ogg" id="6_xwrhr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72b8l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qpbg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6lkq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0g6wo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pwrs"]
 
@@ -36,6 +46,26 @@ script = ExtResource("2_ymoms")
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("6_5ishx")
+
+[node name="Cymbol1" type="Sprite2D" parent="."]
+position = Vector2(1351, 559)
+texture = ExtResource("3_genuk")
+flip_h = true
+
+[node name="Cym" type="Button" parent="Cymbol1"]
+offset_left = -155.0
+offset_top = -195.0
+offset_right = -147.0
+offset_bottom = -187.0
+scale = Vector2(28.7049, 16.3209)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_72b8l")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6qpbg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y6lkq")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0g6wo")
+
+[node name="Cymbol1" type="AudioStreamPlayer2D" parent="Cymbol1/Cym"]
+unique_name_in_owner = true
+stream = ExtResource("4_gb2km")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -80,17 +110,19 @@ unique_name_in_owner = true
 stream = ExtResource("6_xwrhr")
 
 [node name="Pitch1" type="HSlider" parent="."]
-offset_left = 73.0
-offset_top = 606.0
-offset_right = 261.0
-offset_bottom = 622.0
+offset_left = 71.0
+offset_top = 945.0
+offset_right = 259.0
+offset_bottom = 961.0
+scale = Vector2(2, 2)
 max_value = 5.0
 
 [node name="Volume" type="HSlider" parent="."]
 offset_left = 71.0
-offset_top = 439.0
+offset_top = 820.0
 offset_right = 260.0
-offset_bottom = 455.0
+offset_bottom = 836.0
+scale = Vector2(2, 2)
 max_value = 1.0
 step = 0.001
 value = 1.0
@@ -114,6 +146,24 @@ stream = ExtResource("3_43hv5")
 
 [node name="Node2D" parent="." instance=ExtResource("4_3ddh6")]
 position = Vector2(137, 58)
+
+[node name="PitchText" type="RichTextLabel" parent="."]
+offset_left = 71.0
+offset_top = 893.0
+offset_right = 111.0
+offset_bottom = 933.0
+scale = Vector2(2, 2)
+text = "Pitch
+"
+
+[node name="VolumeText" type="RichTextLabel" parent="."]
+offset_left = 71.0
+offset_top = 769.0
+offset_right = 146.0
+offset_bottom = 797.0
+scale = Vector2(2, 2)
+text = "Volume
+"
 
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="BlueDrum/Blue" to="." method="_on_blue_button_down"]

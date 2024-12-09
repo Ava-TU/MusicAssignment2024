@@ -32,6 +32,7 @@ func _on_play_button_down() -> void:
 
 func _on_pitch_1_value_changed(value: float) -> void:
 	%Button.pitch_scale = value
+	%BlueDrum.pitch_scale = value
 
 
 func _on_volume_value_changed(value: float) -> void:
@@ -40,6 +41,12 @@ func _on_volume_value_changed(value: float) -> void:
 		bus_index,
 		linear_to_db(value)
 	)
+	%BlueDrum.volume_db = value
+	AudioServer.set_bus_volume_db(
+		bus_index,
+		linear_to_db(value)
+	)
+	
 
 
 func _on_blue_button_down() -> void:
