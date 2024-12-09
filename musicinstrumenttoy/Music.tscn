@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cu80nntsddon6"]
+[gd_scene load_steps=39 format=3 uid="uid://cu80nntsddon6"]
 
 [ext_resource type="Texture2D" uid="uid://c37dfpl7o48kk" path="res://Sprites/DrumRed.png" id="2_fwaov"]
 [ext_resource type="Script" path="res://Scripts/ButtonAudio.gd" id="2_ymoms"]
@@ -54,6 +54,14 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uexox"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jmk0q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qlyjp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ieta"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y3frb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f14c8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("2_ymoms")
@@ -164,12 +172,13 @@ max_value = 1.0
 step = 0.001
 value = 1.0
 
-[node name="Play" type="Sprite2D" parent="."]
+[node name="PlayYAY" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(928, 316)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_evdds")
 
-[node name="Play" type="Button" parent="Play"]
+[node name="Play" type="Button" parent="PlayYAY"]
 unique_name_in_owner = true
 offset_left = -270.0
 offset_top = -286.0
@@ -183,10 +192,10 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_jmk0q")
 text = "
 "
 
-[node name="AudioPlay" type="AudioStreamPlayer2D" parent="Play/Play"]
+[node name="AudioPlay" type="AudioStreamPlayer2D" parent="PlayYAY/Play"]
 unique_name_in_owner = true
 stream = ExtResource("3_43hv5")
-volume_db = -10.0
+volume_db = -8.0
 
 [node name="Node2D" parent="." instance=ExtResource("4_3ddh6")]
 position = Vector2(1759, 84)
@@ -220,10 +229,34 @@ position = Vector2(1520, 118)
 scale = Vector2(0.45, 0.45)
 texture = ExtResource("14_asaoi")
 
+[node name="Exit" type="Button" parent="."]
+offset_left = 144.0
+offset_top = 128.0
+offset_right = 152.0
+offset_bottom = 136.0
+rotation = 0.116864
+scale = Vector2(37.1028, 24.5463)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qlyjp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8ieta")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y3frb")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f14c8")
+
+[node name="MeVolume" type="VSlider" parent="."]
+offset_left = 719.0
+offset_top = 28.0
+offset_right = 735.0
+offset_bottom = 159.0
+scale = Vector2(2, 2)
+max_value = 1.0
+step = 0.001
+value = 1.0
+
 [connection signal="button_down" from="Cymbol1/Cym" to="." method="_on_cym_button_down"]
 [connection signal="button_down" from="Cymbal2/bal" to="." method="_on_bal_button_down"]
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="BlueDrum/Blue" to="." method="_on_blue_button_down"]
 [connection signal="value_changed" from="Pitch1" to="." method="_on_pitch_1_value_changed"]
 [connection signal="value_changed" from="Volume" to="." method="_on_volume_value_changed"]
-[connection signal="button_down" from="Play/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="PlayYAY/Play" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
+[connection signal="value_changed" from="MeVolume" to="." method="_on_me_volume_value_changed"]

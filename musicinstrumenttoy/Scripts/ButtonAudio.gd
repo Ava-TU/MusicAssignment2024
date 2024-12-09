@@ -23,9 +23,11 @@ func _on_button_button_down() -> void:
 func _on_play_button_down() -> void:
 	#Displays text on the button depending on if the audio is playing or not
 	if %AudioPlay.playing:
+		%PlayYAY.texture = load("res://Sprites/You.png")
 		%AudioPlay.stop()
 	else:
 		%AudioPlay.play()
+		%PlayYAY.texture = load("res://Sprites/YouPlaying.png")
 
 
 func _on_pitch_1_value_changed(value: float) -> void:
@@ -60,3 +62,16 @@ func _on_cym_button_down() -> void:
 func _on_bal_button_down() -> void:
 	%Cymbal2.play()
 	pass # Replace with function body.
+
+
+func _on_exit_button_down() -> void:
+	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	pass # Replace with function body.
+
+
+func _on_me_volume_value_changed(value: float) -> void:
+	%AudioPlay.volume_db = value
+	AudioServer.set_bus_volume_db(
+		bus_index,
+		linear_to_db(value)
+	)
