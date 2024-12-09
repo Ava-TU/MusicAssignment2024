@@ -23,10 +23,8 @@ func _on_button_button_down() -> void:
 func _on_play_button_down() -> void:
 	#Displays text on the button depending on if the audio is playing or not
 	if %AudioPlay.playing:
-		%Play.text = "Play"
 		%AudioPlay.stop()
 	else:
-		%Play.text = "Stop"
 		%AudioPlay.play()
 
 
@@ -51,4 +49,14 @@ func _on_volume_value_changed(value: float) -> void:
 
 func _on_blue_button_down() -> void:
 	%BlueDrum.play()
+	pass # Replace with function body.
+
+
+func _on_cym_button_down() -> void:
+	%Cymbol1.play()
+	pass # Replace with function body.
+
+
+func _on_bal_button_down() -> void:
+	%Cymbal2.play()
 	pass # Replace with function body.

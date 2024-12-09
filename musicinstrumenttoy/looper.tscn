@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0pmbkdhwwdo6"]
+[gd_scene load_steps=9 format=3 uid="uid://b0pmbkdhwwdo6"]
 
 [ext_resource type="Script" path="res://Scripts/looper.gd" id="1_cdl0b"]
 [ext_resource type="AudioStream" uid="uid://bk64j0yiblo1a" path="res://Audio/LoopSound1.ogg" id="2_cajes"]
 [ext_resource type="AudioStream" uid="uid://dsiy5p8mjtkky" path="res://Audio/LoopSound2.ogg" id="3_n06tn"]
 [ext_resource type="AudioStream" uid="uid://uruk53ta57xh" path="res://Audio/LoopSound3.ogg" id="4_xr3ku"]
 [ext_resource type="AudioStream" uid="uid://mlfef4ts2rku" path="res://Audio/LoopSound4.ogg" id="5_68mmb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i1ee3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k26jf"]
 
@@ -42,9 +44,11 @@ offset_left = -19.0
 offset_top = -11.0
 offset_right = 27.0
 offset_bottom = 12.0
+scale = Vector2(2.32, 2.64)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i1ee3")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_k26jf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_ns1af")
-text = "Music"
+text = "Play"
 
 [connection signal="timeout" from="Looper/Timer" to="Looper" method="_on_timer_timeout"]
 [connection signal="button_down" from="Button" to="Looper" method="_on_button_button_down"]

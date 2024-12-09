@@ -1,15 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://cu80nntsddon6"]
+[gd_scene load_steps=35 format=3 uid="uid://cu80nntsddon6"]
 
 [ext_resource type="Texture2D" uid="uid://c37dfpl7o48kk" path="res://Sprites/DrumRed.png" id="2_fwaov"]
 [ext_resource type="Script" path="res://Scripts/ButtonAudio.gd" id="2_ymoms"]
 [ext_resource type="AudioStream" uid="uid://84m7k1nk3q0h" path="res://Audio/AudioTest.ogg" id="3_43hv5"]
+[ext_resource type="Texture2D" uid="uid://bmvnfc5ubfkce" path="res://Sprites/You.png" id="3_evdds"]
 [ext_resource type="Texture2D" uid="uid://c1ioobaes2yd3" path="res://Sprites/Cymbol1.png" id="3_genuk"]
 [ext_resource type="PackedScene" uid="uid://b0pmbkdhwwdo6" path="res://looper.tscn" id="4_3ddh6"]
 [ext_resource type="AudioStream" uid="uid://8ni8khpb8wrs" path="res://Audio/CymbolSound1.ogg" id="4_gb2km"]
 [ext_resource type="AudioStream" uid="uid://d3pl201lkiexu" path="res://Audio/DrumSound1.ogg" id="4_va8xg"]
 [ext_resource type="Texture2D" uid="uid://lt74jw60yka6" path="res://Sprites/DrumBlue.png" id="5_u1p1v"]
+[ext_resource type="AudioStream" uid="uid://dtnqi53l6t8s4" path="res://Audio/CymbolSound2.ogg" id="5_u83i2"]
 [ext_resource type="Texture2D" uid="uid://dv86tsedwitou" path="res://MusicSoundboardBackground.png" id="6_5ishx"]
 [ext_resource type="AudioStream" uid="uid://cmhhki61dmnuk" path="res://Audio/DrumSound2.ogg" id="6_xwrhr"]
+[ext_resource type="Texture2D" uid="uid://ew2hsw1rfxw5" path="res://Sprites/ExitPrompt.png" id="13_uwqwk"]
+[ext_resource type="Texture2D" uid="uid://ytpsuue5245r" path="res://Sprites/LoopPRESS.png" id="14_asaoi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72b8l"]
 
@@ -18,6 +22,14 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6lkq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0g6wo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_24vsk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pwp4l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5kui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mk7jw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pwrs"]
 
@@ -35,7 +47,11 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u4kxr"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyyjf"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pxh6p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uexox"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jmk0q"]
 
@@ -48,16 +64,17 @@ offset_bottom = 1080.0
 texture = ExtResource("6_5ishx")
 
 [node name="Cymbol1" type="Sprite2D" parent="."]
-position = Vector2(1351, 559)
+position = Vector2(1234, 567)
 texture = ExtResource("3_genuk")
 flip_h = true
 
 [node name="Cym" type="Button" parent="Cymbol1"]
-offset_left = -155.0
-offset_top = -195.0
-offset_right = -147.0
-offset_bottom = -187.0
-scale = Vector2(28.7049, 16.3209)
+offset_left = -142.0
+offset_top = -115.0
+offset_right = -134.0
+offset_bottom = -107.0
+rotation = -0.523598
+scale = Vector2(40.6249, 19.8409)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_72b8l")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_6qpbg")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_y6lkq")
@@ -66,6 +83,26 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_0g6wo")
 [node name="Cymbol1" type="AudioStreamPlayer2D" parent="Cymbol1/Cym"]
 unique_name_in_owner = true
 stream = ExtResource("4_gb2km")
+
+[node name="Cymbal2" type="Sprite2D" parent="."]
+position = Vector2(682, 559)
+texture = ExtResource("3_genuk")
+
+[node name="bal" type="Button" parent="Cymbal2"]
+offset_left = -132.0
+offset_top = -275.0
+offset_right = -124.0
+offset_bottom = -267.0
+rotation = 0.523598
+scale = Vector2(36.76, 20.84)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_24vsk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pwp4l")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s5kui")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mk7jw")
+
+[node name="Cymbal2" type="AudioStreamPlayer2D" parent="Cymbal2/bal"]
+unique_name_in_owner = true
+stream = ExtResource("5_u83i2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -128,24 +165,32 @@ step = 0.001
 value = 1.0
 
 [node name="Play" type="Sprite2D" parent="."]
-position = Vector2(573, 305)
+position = Vector2(928, 316)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_evdds")
 
 [node name="Play" type="Button" parent="Play"]
 unique_name_in_owner = true
-offset_left = -16.0
-offset_top = -12.0
-offset_right = 17.0
-offset_bottom = 11.0
+offset_left = -270.0
+offset_top = -286.0
+offset_right = -237.0
+offset_bottom = -263.0
+scale = Vector2(18.12, 20.04)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yyyjf")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_pxh6p")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uexox")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_jmk0q")
-text = "Play"
+text = "
+"
 
 [node name="AudioPlay" type="AudioStreamPlayer2D" parent="Play/Play"]
 unique_name_in_owner = true
 stream = ExtResource("3_43hv5")
+volume_db = -10.0
 
 [node name="Node2D" parent="." instance=ExtResource("4_3ddh6")]
-position = Vector2(137, 58)
+position = Vector2(1759, 84)
+scale = Vector2(1.17697, 1.14679)
 
 [node name="PitchText" type="RichTextLabel" parent="."]
 offset_left = 71.0
@@ -165,6 +210,18 @@ scale = Vector2(2, 2)
 text = "Volume
 "
 
+[node name="ExitPrompt" type="Sprite2D" parent="."]
+position = Vector2(180, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_uwqwk")
+
+[node name="LoopPress" type="Sprite2D" parent="."]
+position = Vector2(1520, 118)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("14_asaoi")
+
+[connection signal="button_down" from="Cymbol1/Cym" to="." method="_on_cym_button_down"]
+[connection signal="button_down" from="Cymbal2/bal" to="." method="_on_bal_button_down"]
 [connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="BlueDrum/Blue" to="." method="_on_blue_button_down"]
 [connection signal="value_changed" from="Pitch1" to="." method="_on_pitch_1_value_changed"]
