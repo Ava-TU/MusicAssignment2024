@@ -11,4 +11,6 @@ Use the mouse the press the buttons and move the sliders up/down/left/right.
 - Two scenes that you can interact with
 - Two secret buttons for you to find
 - Sprites that change to show that you are hovering the button or to show an audio is playing
+- A loop sound made using an array
+- Me singing!
 
