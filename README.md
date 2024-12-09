@@ -16,8 +16,8 @@ Use the mouse the press the buttons and move the sliders up/down/left/right.
 - Me singing!
 
 # Screenshots:
-![Screenshot 2024-12-09 034443](https://github.com/user-attachments/assets/5d94fd70-d20e-48ed-a96d-edddc5dd544e)
-![Screenshot 2024-12-09 034452](https://github.com/user-attachments/assets/2f2d8be3-fca1-40b9-ab2f-a233e6b886b1)
+![SceneOne](https://github.com/user-attachments/assets/4f8a75db-b158-4627-aa6c-42e82c69ec61)
+![SceneTwo](https://github.com/user-attachments/assets/3d78f66e-f627-45ac-ad77-3368b9806cf5)
 
 
 
