@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cu80nntsddon6"]
+[gd_scene load_steps=44 format=3 uid="uid://cu80nntsddon6"]
 
 [ext_resource type="Texture2D" uid="uid://c37dfpl7o48kk" path="res://Sprites/DrumRed.png" id="2_fwaov"]
 [ext_resource type="Script" path="res://Scripts/ButtonAudio.gd" id="2_ymoms"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cmhhki61dmnuk" path="res://Audio/DrumSound2.ogg" id="6_xwrhr"]
 [ext_resource type="Texture2D" uid="uid://ew2hsw1rfxw5" path="res://Sprites/ExitPrompt.png" id="13_uwqwk"]
 [ext_resource type="Texture2D" uid="uid://ytpsuue5245r" path="res://Sprites/LoopPRESS.png" id="14_asaoi"]
+[ext_resource type="AudioStream" uid="uid://sn2moebdar3r" path="res://Audio/FROGSOUND.ogg" id="15_nbfef"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_72b8l"]
 
@@ -62,6 +63,14 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y3frb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f14c8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q71qp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2o7rb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1p5pe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jlulg"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("2_ymoms")
@@ -246,10 +255,34 @@ offset_left = 719.0
 offset_top = 28.0
 offset_right = 735.0
 offset_bottom = 159.0
-scale = Vector2(2, 2)
-max_value = 1.0
+scale = Vector2(2, 1.99307)
+max_value = 3.0
 step = 0.001
 value = 1.0
+
+[node name="MEVolume" type="RichTextLabel" parent="."]
+offset_left = 617.0
+offset_top = 54.0
+offset_right = 669.0
+offset_bottom = 146.0
+scale = Vector2(2, 2)
+text = "Quiet or Loud?
+"
+
+[node name="Frog" type="Button" parent="."]
+offset_left = 1613.0
+offset_top = 832.0
+offset_right = 1621.0
+offset_bottom = 840.0
+scale = Vector2(31.8402, 30.7415)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_q71qp")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2o7rb")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1p5pe")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jlulg")
+
+[node name="FROG" type="AudioStreamPlayer2D" parent="Frog"]
+unique_name_in_owner = true
+stream = ExtResource("15_nbfef")
 
 [connection signal="button_down" from="Cymbol1/Cym" to="." method="_on_cym_button_down"]
 [connection signal="button_down" from="Cymbal2/bal" to="." method="_on_bal_button_down"]
@@ -260,3 +293,4 @@ value = 1.0
 [connection signal="button_down" from="PlayYAY/Play" to="." method="_on_play_button_down"]
 [connection signal="button_down" from="Exit" to="." method="_on_exit_button_down"]
 [connection signal="value_changed" from="MeVolume" to="." method="_on_me_volume_value_changed"]
+[connection signal="button_down" from="Frog" to="." method="_on_frog_button_down"]

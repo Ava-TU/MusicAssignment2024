@@ -31,3 +31,7 @@ func _on_button_pressed() -> void:
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 	pass
+
+
+func _on_frog_1_pressed() -> void:
+	%FROG1.play()
