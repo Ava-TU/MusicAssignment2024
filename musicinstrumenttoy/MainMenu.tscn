@@ -1,13 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b505w4iqr2op"]
+[gd_scene load_steps=7 format=3 uid="uid://b505w4iqr2op"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_dh1eb"]
 [ext_resource type="Texture2D" uid="uid://bypk31h3x14cx" path="res://MusicSoundboardMainMenu.png" id="1_vbfh1"]
-[ext_resource type="Texture2D" uid="uid://lt2b05pllwlm" path="res://Sprites/Well Yes! Hover.png" id="3_r1c01"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3resu"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7cfw"]
-texture = ExtResource("3_r1c01")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ic1w3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_340tj"]
 
@@ -21,16 +19,26 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_vbfh1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(299, 726)
+[node name="PlayHover" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(576, 878)
 
-[node name="Button" type="Button" parent="Sprite2D"]
-offset_left = -10.0
-offset_top = 18.0
-offset_right = -2.0
-offset_bottom = 26.0
-scale = Vector2(72.08, 32.84)
+[node name="Play" type="Button" parent="PlayHover"]
+unique_name_in_owner = true
+offset_left = -281.0
+offset_top = -122.0
+offset_right = -273.0
+offset_bottom = -114.0
+scale = Vector2(69.6, 30.24)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_3resu")
-theme_override_styles/hover = SubResource("StyleBoxTexture_t7cfw")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ic1w3")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_340tj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_c5k75")
+
+[node name="Quit" type="Button" parent="."]
+unique_name_in_owner = true
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="PlayHover/Play" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
