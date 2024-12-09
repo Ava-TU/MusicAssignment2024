@@ -32,8 +32,6 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("2_ymoms")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
